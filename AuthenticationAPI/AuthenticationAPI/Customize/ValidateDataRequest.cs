@@ -1,4 +1,5 @@
 ﻿using AuthenticationAPI.Common;
+using AuthenticationAPI.Common.Utility;
 using Google.Protobuf.WellKnownTypes;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -27,7 +28,7 @@ namespace AuthenticationAPI.Customize
             {
                 context.Result = new ObjectResult(new
                 {
-                    StatusCode = StatusCode.VALIDATION_ERROR_CODE,
+                    StatusCode = (int)ConstantsUtil.HttpStatusCode.BadRequest,
                     Message = "Validation Error"
                 });
                 return;
@@ -39,7 +40,7 @@ namespace AuthenticationAPI.Customize
                 {
                     context.Result = new ObjectResult(new
                     {
-                        StatusCode = StatusCode.VALIDATION_ERROR_CODE,
+                        StatusCode = (int)ConstantsUtil.HttpStatusCode.BadRequest,
                         Message = "Validation Error"
                     });
                     return;

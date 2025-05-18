@@ -72,6 +72,7 @@ namespace AuthenticationAPI.Controllers
         }
 
         [HttpPost("refresh-token")]
+        [Authorize]
         public async Task<IActionResult> RenewToken([FromBody] string refreshToken)
         {
             int statusCode = (int)ConstantsUtil.HttpStatusCode.Ok;

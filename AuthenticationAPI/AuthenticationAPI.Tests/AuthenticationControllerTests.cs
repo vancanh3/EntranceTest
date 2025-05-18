@@ -75,9 +75,6 @@ namespace AuthenticationAPI.Tests
                 LastName = "User"
             };
 
-            //_authServiceMock.Setup(x => x.SignUpAsync(request))
-            //    .Returns((User)null);
-
             // Act
             var result = await _controller.SignUpUserAsync(request) as ObjectResult;
 
